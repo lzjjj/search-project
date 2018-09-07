@@ -1,0 +1,27 @@
+<!--index.wxml-->
+<image src='/imgs/banner.jpg' class='banner'></image>
+<view class='announcement'>
+  <text>公告</text>
+  <view class="example">
+    <view class="marquee_box">
+      <view class="marquee_text" style="font-size: {{size}}px;color: #fd364e;">
+        {{notice}}
+      </view>
+    </view>
+  </view>
+</view>
+  <view class='search-nav'>
+    <view class="{{searchType==0?'search-nav-left active':'search-nav-left'}}" data-type='0' bindtap='typeChange' >机器型号</view>
+    <view class="{{searchType==1?'search-nav-right active':'search-nav-right'}}" data-type='1' bindtap='typeChange'>耗材型号</view>
+  </view>
+<input class='search-input' placeholder='请输入型号' bindinput='inputChange'></input>
+<button class='search-button' bindtap='luanchToResults'>查询</button>
+<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval2}}" duration="{{duration}}">
+  <block wx:for="{{imgUrls}}">
+    <swiper-item>
+      <image src="{{item.picPath}}" class="slide-image" />
+    </swiper-item>
+  </block>
+</swiper>
+<view class='bottom_nav'>
+</view>

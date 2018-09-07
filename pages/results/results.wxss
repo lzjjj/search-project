@@ -1,0 +1,55 @@
+/* pages/results/results.wxss */
+
+.result_box {
+  display: flex;
+  flex-direction: column;
+  background-image: url('https://img.xmiles.cn/chaxun/result_bg.png');
+  background-repeat: no-repeat;
+  min-height: 28rem;
+  width: 100%;
+  background-size: 100% 100%;
+  text-align: center;
+}
+
+.result_title {
+  padding-top: 1.9rem;
+  color: #fff;
+  font-size: 1.29rem;
+}
+
+.next_button {
+  margin-top: 0.58rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 0.8rem;
+}
+
+.result_list {
+  width: 94%;
+  margin: 2rem auto;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+}
+
+.list_item {
+  width: 100%;
+  text-align: left;
+  padding: 0.8rem 1rem;
+  color: #fff;
+  font-size: 0.9375rem;
+  border-bottom: 1px solid #fff;
+  align-items: center;
+  box-sizing: border-box;
+  overflow: hidden;
+ text-overflow:ellipsis;
+ white-space: nowrap;
+}
+
+.bottom_title {
+  padding-bottom: 1.5rem;
+  font-size: 0.8rem;
+  color: #fff;
+}

@@ -1,0 +1,32 @@
+<!--pages/results/results.wxml-->
+<view bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd">
+  <view class='result_box'>
+    <view style='flex:1' wx:if="{{!showNone}}">
+      <view class='result_title'>中国耗材之家查询系统</view>
+      <view class='next_button'>
+        <view data-key='1' bindtap='clickSearchType'>
+          <image src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAdCAMAAACQRsywAAAAS1BMVEUAAAD///////////////////////////////////////////////////////////////////////////////////////////////+DmQsHAAAAGHRSTlMA9gPiE9zEv7m0mZKKhGBZUzYxLBgPBrFoHaizAAAAY0lEQVQoz4XSORLEIBAEwQVpdd9n/f+lsqccMDMIGLr5eT2D5WqQ7BWiJREpjxCpbhEdFaI1ESlPEKnuEJ1/RFsiUp4h0t1jegXapbMKN3ouT+83FpNwXk7V2RcaUo9u23/iA8asGDQmC5h7AAAAAElFTkSuQmCC'
+            style='width:0.475rem;height:0.7rem;vertical-align:middle'></image>上一页</view>
+        <view style='padding:0 0.5rem'>(第{{page}}页)</view>
+        <view bindtap='clickSearchType' data-key='2'> 下一页
+          <image src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAdCAMAAACQRsywAAADAFBMVEUAAAD///////////////////////////////////////////////////////////////////////////////////////////////8ZGRkaGhobGxscHBwdHR0eHh4fHx8gICAhISEiIiIjIyMkJCQlJSUmJiYnJycoKCgpKSkqKiorKyssLCwtLS0uLi4vLy8wMDAxMTEyMjIzMzM0NDQ1NTU2NjY3Nzc4ODg5OTk6Ojo7Ozs8PDw9PT0+Pj4/Pz9AQEBBQUFCQkJDQ0NERERFRUVGRkZHR0dISEhJSUlKSkpLS0tMTExNTU1OTk5PT09QUFBRUVFSUlJTU1NUVFRVVVVWVlZXV1dYWFhZWVlaWlpbW1tcXFxdXV1eXl5fX19gYGBhYWFiYmJjY2NkZGRlZWVmZmZnZ2doaGhpaWlqampra2tsbGxtbW1ubm5vb29wcHBxcXFycnJzc3N0dHR1dXV2dnZ3d3d4eHh5eXl6enp7e3t8fHx9fX1+fn5/f3+AgICBgYGCgoKDg4OEhISFhYWGhoaHh4eIiIiJiYmKioqLi4uMjIyNjY2Ojo6Pj4+QkJCRkZGSkpKTk5OUlJSVlZWWlpaXl5eYmJiZmZmampqbm5ucnJydnZ2enp6fn5+goKChoaGioqKjo6OkpKSlpaWmpqanp6eoqKipqamqqqqrq6usrKytra2urq6vr6+wsLCxsbGysrKzs7O0tLS1tbW2tra3t7e4uLi5ubm6urq7u7u8vLy9vb2+vr6/v7/AwMDBwcHCwsLDw8PExMTFxcXGxsbHx8fIyMjJycnKysrLy8vMzMzNzc3Ozs7Pz8/Q0NDR0dHS0tLT09PU1NTV1dXW1tbX19fY2NjZ2dna2trb29vc3Nzd3d3e3t7f39/g4ODh4eHi4uLj4+Pk5OTl5eXm5ubn5+fo6Ojp6enq6urr6+vs7Ozt7e3u7u7v7+/w8PDx8fHy8vLz8/P09PT19fX29vb39/f4+Pj5+fn6+vr7+/v8/Pz9/f3+/v7///8HSZkKAAAAGHRSTlMA9gPiE9zEv7m0mZKKhGBZUzYxLBgPBrFoHaizAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAXklEQVQokY3SNxLAIBAEQZy89/P/lyrXJCLsouDYJfR3+C7qU0TeRMRZBEMS0RQReRcRFxGMSURbRFSHiLiKYEoiukvE82OXzvKNnsvT641Ownk5VWXvhtyj2/afeAFWZBg0+VSAhAAAAABJRU5ErkJggg=='
+            style='width:0.475rem;height:0.7rem;vertical-align:middle'></image>
+        </view>
+      </view>
+
+      <view class='result_list'>
+        <view class='list_item' wx:for="{{typeList}}" bindtap='luanchToDetail' data-conid='{{item.conId}}' wx:if="{{type==1}}">
+          <image src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAdBAMAAABcXYHLAAAAMFBMVEUAAAD///////////////////////////////////////////////////////////87TQQwAAAAD3RSTlMAdxHuM8yI3VW7RCKqmWaFu+YiAAAAfElEQVQY02NgWMIAB5r/L8HZ8v+/OsDYjP//W8Al3P//T4Cxmc7//7qBGFU/FZBUWSGrEoCrmo+qqgSuajGyqvr/H2Fstv//Q6BMlvj/32CaH///3ABl6v7/H42kAu43hAodhAqueqwqNJFU2CNUvEeoYHAGqYDZIwhnAgAtfUTfP1bFMQAAAABJRU5ErkJggg=='
+            style='width:0.475rem;height:0.7rem;vertical-align:middle;padding-right:1rem'></image>
+          <text>耗材型号:</text> {{item.conModel}} </view>
+
+        <view class='list_item' wx:for="{{typeList}}" bindtap='luanchToDetail' data-conid='{{item.conId}}' wx:if="{{type==0}}">
+          <image src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAdBAMAAABcXYHLAAAAMFBMVEUAAAD///////////////////////////////////////////////////////////87TQQwAAAAD3RSTlMAdxHuM8yI3VW7RCKqmWaFu+YiAAAAfElEQVQY02NgWMIAB5r/L8HZ8v+/OsDYjP//W8Al3P//T4Cxmc7//7qBGFU/FZBUWSGrEoCrmo+qqgSuajGyqvr/H2Fstv//Q6BMlvj/32CaH///3ABl6v7/H42kAu43hAodhAqueqwqNJFU2CNUvEeoYHAGqYDZIwhnAgAtfUTfP1bFMQAAAABJRU5ErkJggg=='
+            style='width:0.475rem;height:0.7rem;vertical-align:middle;padding-right:1rem'></image>机器型号:{{item.conCompatible}}
+        </view>
+      </view>
+    </view>
+    <view class='no_content' wx:if="{{showNone}}"></view>
+    <view class='bottom_title'>购买请联系李经理18613989789</view>
+  </view>
+</view>

@@ -1,0 +1,46 @@
+<!--pages/result-detail/result-detail.wxml-->
+<view class='detail_head'>
+  <view class='detail_head_left'></view>
+  <view>型号查询结果如下：</view>
+</view>
+
+<view class='detail_nav' wx:if="{{!showNone}}">
+ <view class='detail_nav_item'>
+   <view>品牌:</view>
+    <view>{{resultDetail.conBrand}}</view>
+  </view>
+  <view class='detail_nav_item'>
+    <view style='width:22%'>适用机型:</view>
+    <view style='width:75%;text-align:right;word-wrap:break-word;'>{{resultDetail.conCompatible}}</view>
+  </view>
+   <view class='detail_nav_item'>
+    <view>耗材型号:</view>
+    <view>{{resultDetail.conModel}}</view>
+
+  </view>
+   <view class='detail_nav_item'>
+    <view>耗材编码:</view>
+    <view>{{resultDetail.conCode?resultDetail.conCode:'暂无数据'}}</view>
+
+  </view>
+  <view class='detail_nav_item'>
+    <view style='width:20%'>描述:</view>
+    <view style='width:80%;text-align:right;word-wrap:break-word;'>{{resultDetail.conDetails}}</view>
+  </view>
+ 
+  <view class='detail_nav_item'>
+    <view>打印页数与寿命:</view>
+    <view>{{resultDetail.conNum?resultDetail.conNum:'暂无数据'}}</view>
+
+  </view>
+  
+  <view class='detail_nav_item'>
+    <view>参考价格:</view>
+    <view>{{resultDetail.conReferencePrice?resultDetail.conReferencePrice:0}}元</view>
+  </view>
+ 
+  
+ 
+</view>
+<view class='no_content' wx:if="{{showNone}}">
+</view>

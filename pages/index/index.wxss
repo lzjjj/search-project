@@ -1,0 +1,128 @@
+/**index.wxss**/
+
+.banner {
+  width: 100%;
+  height: 6.5rem;
+}
+
+.announcement {
+  margin: 0.875rem 0 0 1rem;
+  color: #fd364e;
+  font-style: italic;
+  font-size: 0.85rem;
+  display: flex;
+}
+
+.announcement>text {
+  padding-right: 0.27rem;
+}
+
+.scrolltext {
+  white-space: nowrap;
+  overflow: -webkit-marquee;
+  width: 170px;
+  -webkit-marquee-direction: left;
+  -webkit-marquee-speed: normal;
+  -webkit-marquee-style: slide;
+  -webkit-marquee-repetition: 1;
+}
+
+.example {
+  font-style: normal;
+  color: #354248;
+  display: block;
+  width: 85%;
+  height: 100rpx;
+  position: relative;
+  overflow: hidden;
+}
+
+.marquee_box {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  height: 1rem;
+}
+
+.marquee_text {
+  position: absolute;
+  top:0rpx;
+  height: 1rem;
+  font-size:0.9rem;
+  white-space: nowrap;
+  line-height: 1rem;
+  animation:myfirst 10s linear infinite;
+}
+@keyframes myfirst
+{
+  0%   {margin-left:750rpx;}
+  100% {margin-left:-750rpx;}
+}
+
+.search-nav {
+  margin: 0 auto;
+  width: 86%;
+  display: flex;
+   justify-content: center; 
+  align-items: center;
+  height: 2.44rem;
+  line-height: 2.44rem;
+  border-radius: 0.2rem;
+  border: 1px solid rgb(41, 123, 255);
+  font-size: 0.8rem;
+  text-align: center;
+  color: gray;
+}
+.search-nav-left,.search-nav-right  {
+  width: 50%;
+  height: 100%;
+
+}
+
+.active{
+  background-color: rgb(23, 108,182);
+  color: #ffffff;
+}
+.search-input{
+  display: block;
+  width: 86%;
+  height: 2.44rem;
+  line-height: 2.44rem;
+   text-align: center; 
+  border-radius: 0.2rem;
+  border: 1px solid rgb(23, 108,182);
+  margin: 1.3rem auto;
+  font-size: 0.8rem;
+
+}
+.search-input::-webkit-input-placeholder{
+  text-align: center;
+}
+.search-button{
+  width: 86%;
+  height: 2.44rem;
+  line-height: 2.44rem;
+   text-align: center; 
+  border-radius: 0.2rem;
+  /* border: 1px solid rgb(41, 123, 255); */
+  background-color: rgb(23, 108,182);
+  margin: 1.3rem auto;
+  font-size: 0.8rem;
+  color: #ffffff;
+}
+swiper {
+  margin-top: 2rem;
+  width: 100%;
+  height: 6.625rem;
+}
+
+.slide-image {
+  width: 100%;
+  height: 6.625rem;
+}
+.bottom_nav{
+  margin-top: 0.83rem;
+  width: 100%;
+  height: 6.625rem;
+  background-color: rgb(16, 50,96);
+}

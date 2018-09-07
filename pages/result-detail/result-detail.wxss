@@ -1,0 +1,24 @@
+/* pages/result-detail/result-detail.wxss */
+.detail_head{
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  padding: 0.5rem;
+  border-bottom: 1px solid #f8f8f8;
+}
+.detail_head_left{
+  width: 0.15rem;
+  height: 1rem;
+  background-color: rgb(23, 108,182);
+  margin-right: 0.2rem;
+}
+.detail_nav{
+  font-size: 0.85rem;
+  color: gray;
+}
+.detail_nav_item{
+  justify-content: space-between;
+  display: flex;
+  padding: 0.5rem 1rem 0.5rem 0.5rem;
+  border-bottom: 1px solid #f8f8f8;
+}
