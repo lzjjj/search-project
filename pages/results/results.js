@@ -14,8 +14,8 @@ Page({
     type: 0,
     detail: "",
     trd_session: "",
-    lastPage: false,
-    showNone: false, 
+    lastPage: true,
+    showNone: true, 
     canRequest:true
   },
 
@@ -65,12 +65,14 @@ Page({
       method: 'POST',
       success: (res) => {
         if (res.data.success) {
-          this.setData({
-            typeList: res.data.obj,
-            lastPage: res.data.lastPage,
-            showNone: res.data.obj.length == 0 ? true : false
-          })
           wx.hideLoading();
+          if (res.data.obj){
+            this.setData({
+              typeList: res.data.obj,
+              lastPage: res.data.lastPage,
+              showNone: res.data.obj.length == 0 ? true : false
+            })
+          }
         }
 
       },

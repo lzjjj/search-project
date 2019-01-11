@@ -45,12 +45,15 @@ Page({
         }
       },
       success:res=>{
+        console.log(res)
         if(res.data.success){
-          this.setData({
-            resultDetail:res.data.obj,
-            showNone: res.data.obj ? false:true
-          })
           wx.hideLoading();
+          if (res.data.obj){
+            this.setData({
+              resultDetail: res.data.obj[0],
+              showNone: res.data.obj ? false : true
+            })
+          }
         }
       }
     })

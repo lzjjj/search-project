@@ -1,8 +1,8 @@
 //app.js
-import requestUrls from "./common/api.js"
+import requestUrls from './common/api.js'
 
 App({
-  onLaunch: function () {
+  onLaunch: function() {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
@@ -11,84 +11,67 @@ App({
     // 登录
     wx.login({
       success: res => {
-        var that = this;
-        var code = res.code;
-        console.log(code);
+        var that = this
+        var code = res.code
+        console.log(code)
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
         wx.getStorage({
           key: 'trd_session',
           success: res1 => {
-
             if (res1.data != undefined) {
               wx.request({
-
-                url: requestUrls.WeChatlogin + "?trd_session=" + res1.data,
+                url: requestUrls.WeChatlogin + '?trd_session=' + res1.data,
                 header: {
                   'content-type': 'application/json' // 默认值
                 },
                 success: res2 => {
-
                   if (res2.data.msg == 'noLogin') {
                     wx.request({
-
-                      url: requestUrls.WeChatlogin + "?code=" + code,
+                      url: requestUrls.WeChatlogin + '?code=' + code,
                       header: {
                         'content-type': 'application/json' // 默认值
                       },
                       success: res3 => {
-
                         wx.setStorage({
-                          key: "trd_session",
+                          key: 'trd_session',
                           data: res3.data.obj.trd_session
                         })
-
                       }
                     })
                   }
-
-
                 }
               })
-            }
-            else {
-
+            } else {
               wx.request({
-
-                url: requestUrls.WeChatlogin + "?code=" + code,
+                url: requestUrls.WeChatlogin + '?code=' + code,
                 header: {
                   'content-type': 'application/json' // 默认值
                 },
                 success: res4 => {
-
                   wx.setStorage({
-                    key: "trd_session",
+                    key: 'trd_session',
                     data: res4.data.obj.trd_session
                   })
-
                 }
               })
             }
-
           },
-          fail: function () {
+          fail: function() {
             wx.request({
-              url: requestUrls.WeChatlogin + "?code=" + code,
+              url: requestUrls.WeChatlogin + '?code=' + code,
               header: {
                 'content-type': 'application/json' // 默认值
               },
               success: res5 => {
-
                 wx.setStorage({
-                  key: "trd_session",
+                  key: 'trd_session',
                   data: res5.data.obj.trd_session
                 })
-
               }
             })
           }
-
         })
-      },
+      }
     })
     // 获取用户信息
     wx.getSetting({
